@@ -1,0 +1,181 @@
+$('#form-field-email').on('blur', function()
+	{
+		var email = document.forms["Survey"]["form-field-email"];
+		if (email.value == "")								 
+	{ 
+		window.alert("e-mail address is required field."); 
+		return true; 
+	} 
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		return true; 
+	} 
+
+	if (email.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		return true; 
+	} 
+		
+	});
+
+
+$('#form-field-phone').on('blur', function()
+{
+var phoneNumber = $('#form-field-phone').val().length;
+  
+  if (phoneNumber >10)
+	{
+		
+	alert("Phone is greater than 10");
+    phoneNumber.focus();
+    return false;
+				
+	}
+});
+
+
+$("btnSurvey").click(function() {
+    var isOk = $('form-field-3Areas_of_your_life').val({
+        rules: {
+            testing: {
+                minlength: 3
+            }
+        },
+        message: {
+            testing: "please select at least three item"
+        }
+    });
+    return isOk; 
+});
+
+
+
+
+
+
+$('#btnSurvey').on('click',function() {
+
+ 	var name = document.forms["Survey"]["form-field-name"];			 
+	var email = document.forms["Survey"]["form-field-email"]; 
+	var phone = document.forms["Survey"]["form-field-phone"]; 
+	var hear= document.forms["Survey"]["form-field-hearaboutus"]; 
+    var city= document.forms["Survey"]["form-field-city"];
+    var dob= document.forms["Survey"]["form-field-dob"];
+    var month= document.forms["Survey"]["form-field-month"];
+    var year= document.forms["Survey"]["form-field-year"];
+    var relationship= document.forms["Survey"]["form-field-relationship"]; 
+    var da9841d= document.forms["Survey"]["form-field-da9841d"];
+   
+	//var what = document.forms["RegForm"]["Subject"]; 
+	//var password = document.forms["RegForm"]["Password"]; 
+	//var address = document.forms["RegForm"]["Address"]; 
+
+	if (name.value == "")								 
+	{ 
+		window.alert("Please enter your name."); 
+		name.focus(); 
+		return false; 
+	} 
+
+	/* if (address.value == "")							 
+	{ 
+		window.alert("Please enter your address."); 
+		name.focus(); 
+		return false; 
+	}  */
+	
+	if (email.value == "")								 
+	{ 
+		window.alert("e-mail address is required field."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+  
+  if(phone.value == "") {
+    window.alert("Phone number is required filed.");
+    phone.focus();
+    return false;
+    }
+  	if (phone.length > 10)
+	{
+		alert("Please verify the phone number");
+      	phone.focus();
+      	return false;
+				
+	}
+  
+  
+    if(city.value == "") 
+    {
+         window.alert("city is required filed.");
+         city.focus();
+         return false;
+    }
+  
+  
+  
+    if(dob.value == "") 
+     {
+        window.alert("Date of Birth is required filed.");
+        dob.focus();
+        return false;
+     }
+  
+   if(month.value == "") 
+     {
+        window.alert("Month is required filed.");
+        month.focus();
+        return false;
+     }
+  
+     if(month.value == "") 
+     {
+        window.alert("Year is required filed.");
+        month.focus();
+        return false;
+     }
+  
+      if(relationship.value == "") 
+     {
+        window.alert("Relationship is required filed.");
+        relationship.focus();
+        return false;
+     }
+    
+      if(da9841d.value == "") 
+     {
+        window.alert("required filed.");
+        da9841d.focus();
+        return false;
+     }
+  
+
+  
+  
+
+	if (hear.value=="")
+	{
+		alert("Please tell us how did you hear about us")
+		hear.focus();
+		return false;
+	}
+
+	return true; 
+});
